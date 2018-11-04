@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ComicService } from 'src/app/services/comics.service';
-import { NUMBER_TYPE } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-list-cards',
@@ -9,7 +8,7 @@ import { NUMBER_TYPE } from '@angular/compiler/src/output/output_ast';
   providers: [ComicService]
 })
 export class ListCardsComponent implements OnInit {
-  public listComics:any = [];
+  public listComics:any[] = [];
   
   constructor(
     private _ComicService:ComicService,
@@ -20,8 +19,8 @@ export class ListCardsComponent implements OnInit {
   ngOnInit() {
      this._ComicService.getComics()
         .subscribe((res:any)=>{
-          this.listComics =  res;
-          console.log(this.listComics.data.results);
+          this.listComics =  res['data']['results'];
+          console.log(this.listComics);
         });
   }
 

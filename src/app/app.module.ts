@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ListCardsComponent } from './components/list-cards/list-cards.component';
 import { ComicService } from './services/comics.service';
+import { ComicImagesPipe } from './pipes/comic-images.pipe';
+import { FilterComicsPipe } from './pipes/filter-comics.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ListCardsComponent,
+    ComicImagesPipe,
+    FilterComicsPipe,
   ],
   imports: [
     BrowserModule,
