@@ -1,0 +1,22 @@
+<div class="search-container panel orange">
+  <div id="search-bar" class="search-bar">
+    <input type="text" #search placeholder="Search..." (keyup)="searchComic(search.value)"/>
+    <div id="close" class="toggle"></div>
+  </div>
+</div>
+<section id="main" class=" panel ltgrey">
+  <div class="wrapper">
+    <ul class="comic list-cards">
+      <li class="card card--big" *ngFor="let comics of listChecked">
+        <img [src]="comics.images | comicImages" alt="{{comics.title}}" class="card__image">
+        <h2 class="card__title">{{comics.title}}</h2>
+        <div class="card__action-bar panel yellow">
+          <button (click)="gestionarLike($event,true)" class="card__button">Like</button>
+          <h1>0</h1>
+          <button (click)="gestionarLike($event,false)" class="card__button">Dislike</button>
+          <h1>0</h1>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
