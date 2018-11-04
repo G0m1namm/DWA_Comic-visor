@@ -7,25 +7,29 @@ import { ComicService } from 'src/app/services/comics.service';
   styleUrls: ['./list-cards.component.scss'],
   providers: [ComicService]
 })
+
+
 export class ListCardsComponent implements OnInit {
   public listComics:any[] = [];
+  public listChecked:any[] = [];
+
+  @Input() userFilter: any;
   
   constructor(
     private _ComicService:ComicService,
   ) { 
-
   }
 
   ngOnInit() {
      this._ComicService.getComics()
         .subscribe((res:any)=>{
           this.listComics =  res['data']['results'];
-          console.log(this.listComics);
+          this.listChecked =  res['data']['results'];
+          // console.log(this.listComics);
         });
   }
 
   gestionarLike(event: any,value: boolean){
-    console.dir(event.target.parentNode.childNodes[1].textContent);
 
     if(value){
       let like = parseInt(event.target.parentNode.childNodes[1].textContent);
@@ -36,6 +40,11 @@ export class ListCardsComponent implements OnInit {
       dislike++;
       event.target.parentNode.childNodes[3].textContent = dislike;
     }
+  }
+
+  searchComic(word){
+    this.listChecked = this._ComicService.searchComic(word,this.listComics);
+    //  console.log(this.comics);
   }
 
 }

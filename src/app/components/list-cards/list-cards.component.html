@@ -1,8 +1,13 @@
+<div class="search-container panel orange">
+  <div id="search-bar" class="search-bar">
+    <input type="text" #search placeholder="Search..." (keyup)="searchComic(search.value)"/>
+    <div id="close" class="toggle"></div>
+  </div>
+</div>
 <section id="main" class=" panel ltgrey">
   <div class="wrapper">
     <ul class="comic list-cards">
-      <li class="card card--big" *ngFor="let comics of listComics; let i=index">
-        <!-- <div class="card__image" style="background-image: url({{comics.images[0].path}}.{{comics.images[0].extension}});"></div> -->
+      <li class="card card--big" *ngFor="let comics of listChecked">
         <img [src]="comics.images | comicImages" alt="{{comics.title}}" class="card__image">
         <h2 class="card__title">{{comics.title}}</h2>
         <div class="card__action-bar panel yellow">

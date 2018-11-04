@@ -13,4 +13,25 @@ export class ComicService {
     getComics() {
         return this._http.get(this.url);
     }
+
+    searchComic(termino:string, comics:any[]){
+        let comicsArr:any[] = [];
+        let name = termino.toLocaleLowerCase();
+    
+        if(termino.length>0){
+          comics.forEach(element=>{
+    
+            let title = element.title.toLocaleLowerCase();
+    
+            if(title.indexOf(termino) >=0){
+              comicsArr.push(element);
+            }
+          })
+    
+          return comicsArr;
+        }
+        else{
+          return comics;
+        }
+      }
 }
