@@ -1,3 +1,56 @@
+$red: red;
+$height: 40px;
+$width: 300px;
+$border-width: 4px;
+$color: black;
+$bg-color: #E62878;
+$defualt-transition-function: cubic-bezier(.73,.01,.53,1.38);
+$defualt-animation-timing-function: cubic-bezier(1,.01,.46,1.48);
+
+.search-container{
+    width: 100%;
+    height: auto;
+    padding: 1em 0em;
+    display: inline-block;
+    box-shadow: 3px 5px 10px rgba(255, 0, 0, 0.349);
+}
+.search-bar {
+    -moz-transition: all 0.5s cubic-bezier(0.7, 0.03, 0.17, 0.97) 0.25s;
+    -o-transition: all 0.5s cubic-bezier(0.7, 0.03, 0.17, 0.97) 0.25s;
+    -webkit-transition: all 0.5s cubic-bezier(0.7, 0.03, 0.17, 0.97);
+    -webkit-transition-delay: 0.25s;
+    transition: all 0.5s cubic-bezier(0.7, 0.03, 0.17, 0.97) 0.25s;
+    position: relative;
+    width: $width;
+    height: $height;
+    margin: 0 auto;
+
+    input {
+        outline: none;
+        box-shadow: none;
+        height: $height;
+        line-height: $height;
+        font-size: 1.4rem;
+        font-weight: 700;
+        font-family: 'Patrick Hand SC';
+        color: black;
+        width: 100%;
+        padding: 0 1em;
+        box-sizing: border-box;
+        background: transparent;
+        border: $border-width solid $color;
+        border-width: 5px 3px 3px 5px;
+        border-radius:95% 4% 97% 5%/4% 94% 3% 95%;
+        transform: skewX(-15deg);
+        transition: box-shadow 0.4s ease;
+
+        &:focus{
+            box-shadow: 3px 5px 10px rgba(255, 0, 0, 0.349),
+                    6px 5px 10px rgba(255, 0, 0, 0.349);
+        }
+    }
+
+}
 #main{
     width: 100%;
     height: auto;
@@ -106,7 +159,8 @@ ul.list-cards{
         -ms-user-select: none;
             user-select: none;
     font-size: 1rem;
-    color: black;
+    color: white;
+    font-family: 'Patrick Hand SC';
     margin: 0;
     position: absolute;
     display: flex;
@@ -155,7 +209,7 @@ ul.list-cards{
     font-size: 1.2rem;
     overflow: hidden;
     line-height: 52px;
-    padding: 0 16px;
+    padding: 0 6px;
     background:transparent;
     border: 0;
     color: #FF1744;
@@ -216,8 +270,8 @@ ul.list-cards{
     max-height: 176px;
 }
 .card--big .card__title {
-    top: 5px;
-    background-color: rgba(224, 224, 224, 0.65);
+    top: 0;
+    background-color: rgba(255, 0, 0, 0.521);
 }
 .card--big .card__text {
     top: 176px;
