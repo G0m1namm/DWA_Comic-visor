@@ -54,6 +54,7 @@ $defualt-animation-timing-function: cubic-bezier(1,.01,.46,1.48);
 #main{
     width: 100%;
     height: auto;
+    min-height: 75vh;
     box-sizing: border-box;
 
     & .wrapper{
