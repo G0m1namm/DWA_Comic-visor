@@ -1,8 +1,9 @@
 # ComicVisor
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.2.
+Proyecto realizado para el curso de Desarrollo Web Avanzado. Utiliza la API de MARVEL para mostrar información de comics y filtrarlos por los nombres.
 
 ## Development server
+Run `ng serve`
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
